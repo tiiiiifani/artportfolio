@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<link rel="stylesheet" href="art.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link href="http://fonts.googleapis.com/css?family=Fjalla+One|Cantarell:400,400italic,700italic,700" rel="stylesheet" type="text/css" />
+	<title>Tiffany Chan</title>
+
+	<script>
+$(document).ready(function(){
+  // Add smooth scrolling to all links
+  $("a").on('click', function(event) {
+
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+      // Prevent default anchor click behavior
+      event.preventDefault();
+
+      // Store hash
+      var hash = this.hash;
+
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 800, function(){
+
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+      });
+    } // End if
+  });
+});
+
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";}
+</script>
+
+</head>
+
+<body>
+
+	<div class="menu">
+		<div class="menucontent">
+			<a href="art.html">Home</a>
+			<a href="art.html">Biography</a>
+			<div class="dropdown">
+		  	<button class="dropbtn">Artwork</button>
+		  		<div class="dropdown-content">
+				    <a href="photography.html">Photography</a>
+				    <a href="painting.html">Paintings</a>
+				    <a href="sculpture.html">Sculptures</a>
+		  		</div>
+			</div>
+			<a href="contact.html">Contact</a>
+		</div>
+	</div>
+
+			<center>
+	<div class="PortCentered">
+		<h3>Photography</h3>
+			<h4>Neighborhood Study</h4>
+	     <img src="images/photo1.jpg">
+	     <img src="images/photo2.jpg">
+	     <img src="images/photo3.jpg">
+			 <img src="images/photo4.jpg">
+
+			<br><br>
+
+			<h4>Importance is Disappearing</h4>
+				<img src="images/alicephoto1.jpg">
+				<img src="images/alicephoto2.jpg">
+			</center>
+
+		</div>
+
+</body>
+</html>
